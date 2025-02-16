@@ -5,8 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Veronika" />
     <title>Rom&nd</title>
+    <style>
+      #romand {
+        transition: background-color 0.5s ease-in-out;
+      }
+
+      #romand:target {
+        background-color: pink;
+        animation: fadeOut 3s forwards;
+      }
+
+      @keyframes fadeOut {
+        0% {
+          background-color: pink;
+        }
+        100% {
+          background-color: transparent;
+        }
+      }
+    </style>
   </head>
   <body>
     <h1>Rom&nd</h1>
+    <p id="romand">
+      Rom&nd- корейський бренд, відомий своїми неймовірними тінтами. Однак, їхні
+      палетки мені також дуже подобаються, незважаючи на те, що вони трохи
+      сипляться.
+    </p>
+
+    <p>Тут має бути текст, але я ще не придумала</p>
   </body>
 </html>

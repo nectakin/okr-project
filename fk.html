@@ -5,8 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Veronika" />
     <title>Flower Knows</title>
+    <style>
+      #fk {
+        transition: background-color 0.5s ease-in-out;
+      }
+
+      #fk:target {
+        background-color: pink;
+        animation: fadeOut 3s forwards;
+      }
+
+      @keyframes fadeOut {
+        0% {
+          background-color: pink;
+        }
+        100% {
+          background-color: transparent;
+        }
+      }
+    </style>
   </head>
   <body>
     <h1>Flower Knows</h1>
+    <p id="fk">
+      Flower Knows- китайський бренд. Славляться своїм нереальним пакуванням.
+      Їхні палетки тіней дуже пігментовані, а спаркли у них просто нереальні-
+      дуже приємна, масляниста текстура, а сяйво наче з космосу.
+    </p>
+
+    <p>Тут має бути текст, але я ще не придумала</p>
   </body>
 </html>

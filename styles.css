@@ -125,3 +125,36 @@ iframe {
     text-decoration: underline;
 }
 
+article p{
+    color: brown;
+}
+
+p span {
+    color: #f48fb1;
+}
+
+
+b + i {
+    color: #f48fb1;
+}
+
+h2 + p{
+    color: brown;
+}
+
+
+.showcase > p{
+    color: #f48fb1;
+}
+
+.showcase-container>.item {
+    background-color: pink;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.showcase-container>.item>.sub-item {
+    background-color: #f48fb1;
+    padding: 5px;
+}
+

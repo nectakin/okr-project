@@ -36,6 +36,29 @@
 
     <p>Тут має бути текст, але я ще не придумала</p>
 
+    <div class="showcase">
+      <p>І ось приклад дочірнього селектора</p>
+      <a href="/">
+        <p>Цей абзац НЕ змінить колір</p>
+      </a>
+    </div>
+
+    <div class="showcase-container">
+      <div class="item">А отут більш складний приклад. Елемент 1</div>
+      <div class="item">Елемент 2</div>
+
+      <div class="item">
+        <p>Елемент 3</p>
+        <div class="sub-item">
+          Вкладений елемент 3.1: вибираємо лише ті елементи з класом .sub-item,
+          які є дочірніми елементами безпосередньо в середині елемента з класом
+          .item
+        </div>
+      </div>
+
+      <div class="item">Елемент 4</div>
+    </div>
+
     <a id="back" href="index.html">Go back</a>
   </body>
 </html>

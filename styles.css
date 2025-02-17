@@ -158,3 +158,65 @@ h2 + p{
     padding: 5px;
 }
 
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid pink;
+    position: relative;
+}
+
+.floating-box {
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+    float: right;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 50px;
+}
+
+
+.info p:first-child {
+    color: pink;
+    font-weight: bold;
+}
+
+
+
+.link-example:link {
+    color: blue;
+    font-weight: bold;
+}
+
+
+.visited-example:visited {
+    color: purple;
+    text-decoration: underline;
+}
+
+
+.hover-example{
+    transition: font-size 200ms ease-in-out;
+}
+.hover-example:hover {
+    color: red;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.active-example:active {
+    color: green;
+    font-weight: bold;
+}
+
+
+.pseudo::before {
+    content: "🌸 ";
+}
+
+.pseudo::after {
+    content: " 🌸";
+}
+

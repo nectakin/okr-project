@@ -6,6 +6,7 @@
     <meta name="author" content="Veronika" />
     <title>Моя улюблена косметика</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="index.js"></script>
 
     <style>
       * {
@@ -56,7 +57,9 @@
       </ol>
     </nav>
 
-    <p>На цьому сайті ви дізнаєтесь про мої улюблені бренди косметики ^_^</p>
+    <p style="font-size: 60px; border: #f48fb1">
+      На цьому сайті ви дізнаєтесь про мої улюблені бренди косметики ^_^
+    </p>
 
     <h1>
       <font size="6" color="pink"
@@ -237,5 +240,53 @@
       height="315"
       allowfullscreen
     ></iframe>
+
+    <h1>Тестування функцій alert, prompt, confirm у внутр. скрипті</h1>
+
+    <button onclick="showAlert()">Показати alert</button>
+    <button onclick="askQuestion()">Питання через prompt</button>
+    <button onclick="confirmAction()">Підтвердити дію</button>
+
+    <script>
+      // Функція alert
+      function showAlert() {
+        alert("Це повідомлення з alert");
+      }
+
+      // Функція prompt
+      function askQuestion() {
+        let name = prompt("Як тебе звати?");
+        if (name != null && name != "") {
+          alert("Привіт, " + name + "!");
+        } else {
+          alert("Ти не ввів ім'я.");
+        }
+      }
+
+      // Функція confirm
+      function confirmAction() {
+        let result = confirm("Чи впевнений ти, що хочеш продовжити?");
+        if (result) {
+          alert("Дія підтверджена!");
+        } else {
+          alert("Дія скасована.");
+        }
+      }
+    </script>
+
+    <h1 class="title_1">Практика JS у зовн. скрипті</h1>
+    <button onclick="dialogWithUser()">Діалог з користувачем</button>
+    <button onclick="showDeveloperInfo('Кузьменко', 'Вероніка')">
+      Про розробника
+    </button>
+    <button onclick="compareStrings()">Порівняти рядки</button>
+    <button onclick="changeBackground()">Змінити фон на 30 сек</button>
+    <button onclick="redirect()">Перенаправити</button>
+    <button onclick="modifyPage()">Редагувати сторінку</button>
+
+    <h1 id="title">Початковий заголовок</h1>
+    <p class="text">Це параграф, який ми змінимо.</p>
+    <p class="text">Другий параграф, який буде замінено.</p>
+    <div id="container"></div>
   </body>
 </html>

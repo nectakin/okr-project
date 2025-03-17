@@ -89,3 +89,73 @@ function modifyPage() {
     //title.remove();
     //document.write("<p>Цей текст додано через document.write.</p>");
 }
+
+// ЛАБОРАТОРНА 7
+
+ // 1) 1. використання події миші через атрибут
+function changeColor() {
+    let box = document.getElementById("clickBox");
+    box.style.backgroundColor = box.style.backgroundColor === "rgb(255, 24, 147)" ? "pink" : "rgb(255, 24, 147)";
+}
+
+ //    2. використання події миші через властивість
+    let boxElement = document.getElementById("clickBox");
+    boxElement.onmouseover = function () {
+    boxElement.style.border = "2px solid pink";
+    };
+
+    boxElement.onmouseleave = function () {
+    boxElement.style.border = "none";
+    };
+
+// 2) addEventListener + різні обробники
+function handler1() {
+    alert("Обробник 1");
+}
+
+function handler2() {
+    console.log("Обробник 2");
+}
+
+    boxElement.addEventListener("click", handler1);
+    boxElement.addEventListener("click", handler2);
+    
+  // 3) handleEvent + event.currentTarget
+let eventHandlerObj = {
+    handleEvent(event) {
+    alert("Було натиснуто на: " + event.currentTarget.tagName);
+    }
+};
+boxElement.addEventListener("click", eventHandlerObj);
+    
+
+ /* // 4) removeEventListener
+setTimeout(() => {
+    boxElement.removeEventListener("click", handler1);
+}, 5000); */
+
+// 5) підсвічування списку event.target
+document.getElementById("itemList1").onclick = function(event) {
+    if (event.target.tagName === "LI") {
+    let items = document.querySelectorAll("#itemList1 li");
+    items.forEach(item => item.classList.remove("active")); 
+    event.target.classList.add("active"); 
+    }
+};
+
+// 6) меню з data-атрибутами + "Поведінка"
+document.getElementById("menu1").onclick = function(event) {
+    if (event.target.tagName === "BUTTON") {
+    let action = event.target.dataset.action;
+        if (action === "alert") {
+            alert("alert");
+        } else if (action === "log") {
+            console.log("Виконано дію з data-action='log'");
+        } else if (action === "color") {
+            document.body.style.backgroundColor = "lightyellow";
+            setTimeout(() => {
+                document.body.style.backgroundColor = "";
+            }, 5000);
+        }
+    }
+};

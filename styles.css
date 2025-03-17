@@ -284,3 +284,8 @@ button:active {
 #container p {
     animation: fadeIn 200ms ease-in-out;
 }
+
+.active {
+    background-color: pink;
+    font-weight: bold;
+}

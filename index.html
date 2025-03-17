@@ -6,7 +6,7 @@
     <meta name="author" content="Veronika" />
     <title>Моя улюблена косметика</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
 
     <style>
       * {
@@ -240,7 +240,7 @@
       height="315"
       allowfullscreen
     ></iframe>
-
+    <!------------------------------------------------>
     <h1>Тестування функцій alert, prompt, confirm у внутр. скрипті</h1>
 
     <button onclick="showAlert()">Показати alert</button>
@@ -273,7 +273,7 @@
         }
       }
     </script>
-
+    <!------------------------------------------------>
     <h1 class="title_1">Практика JS у зовн. скрипті</h1>
     <button onclick="dialogWithUser()">Діалог з користувачем</button>
     <button onclick="showDeveloperInfo('Кузьменко', 'Вероніка')">
@@ -288,5 +288,21 @@
     <p class="text">Це параграф, який ми змінимо.</p>
     <p class="text">Другий параграф, який буде замінено.</p>
     <div id="container"></div>
+
+    <h1>Події. Обробники подій. Спливання. Делегування подій.</h1>
+    <div class="box" onclick="changeColor()" id="clickBox">Клік сюди</div>
+    <h3>Список:</h3>
+    <ul id="itemList1">
+      <li>Елемент 1</li>
+      <li>Елемент 2</li>
+      <li>Елемент 3</li>
+      <li>Елемент 4</li>
+    </ul>
+    <h3>Меню:</h3>
+    <div class="menu1" id="menu1">
+      <button data-action="alert">Показати alert</button>
+      <button data-action="log">Вивести в консоль</button>
+      <button data-action="color">Змінити фон сторінки</button>
+    </div>
   </body>
 </html>

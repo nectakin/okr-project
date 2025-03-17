@@ -159,3 +159,89 @@ document.getElementById("menu1").onclick = function(event) {
         }
     }
 };
+
+
+
+// ЛАБОРАТОРНА 8
+
+// 1) mouseover, mouseout + event.target, event.relatedTarget.
+   const itemList = document.getElementById("itemList1");
+
+itemList.addEventListener("mouseover", (event) => {
+    if (event.target.tagName === "LI") {
+        event.target.style.backgroundColor = "#f48fb1"; 
+        event.target.style.color = "white";
+    }
+
+    const relatedElement = event.relatedTarget;
+    if (relatedElement && relatedElement.tagName !== "LI") {
+        //  itemList.style.transform = "scale(1.05)";
+        //  itemList.style.transition = "transform 0.3s ease-in-out";
+    }
+});
+
+itemList.addEventListener("mouseout", (event) => {
+    if (event.target.tagName === "LI") {
+        event.target.style.backgroundColor = "";
+        event.target.style.color = "black";
+    }
+    const relatedElement = event.relatedTarget;
+    if (relatedElement && relatedElement.tagName !== "LI") {
+        // itemList.style.transform = "scale(1)";
+    }
+});
+
+    
+// 2) Реалізація перетягування елемента
+   const dragItem = document.getElementById('dragItem');
+    const dropTarget = document.getElementById('dropTarget');
+
+    let isDragging = false;
+    let shiftX, shiftY;
+
+    dragItem.onmousedown = function(event) {
+      shiftX = event.clientX - dragItem.getBoundingClientRect().left;
+      shiftY = event.clientY - dragItem.getBoundingClientRect().top;
+      dragItem.style.position = 'absolute';
+      dragItem.style.zIndex = 1000; 
+      document.body.append(dragItem); 
+
+      function moveAt(pageX, pageY) {
+        dragItem.style.left = pageX - shiftX + 'px';
+        dragItem.style.top = pageY - shiftY + 'px';
+      }
+
+      moveAt(event.pageX, event.pageY);
+
+      function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+
+        dragItem.hidden = true; 
+        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        dragItem.hidden = false;
+
+        if (elemBelow === dropTarget) {
+          dropTarget.classList.add('highlight');
+        } else {
+          dropTarget.classList.remove('highlight');
+        }
+      }
+
+      document.addEventListener('mousemove', onMouseMove);
+
+      dragItem.onmouseup = function() {
+        document.removeEventListener('mousemove', onMouseMove);
+        dragItem.onmouseup = null;
+
+        if (dropTarget.classList.contains('highlight')) {
+          dropTarget.classList.remove('highlight');
+          dropTarget.appendChild(dragItem); 
+          dragItem.style.left = '0px';
+          dragItem.style.top = '0px';
+        }
+      };
+    };
+
+    dragItem.ondragstart = function() {
+      return false;
+    };

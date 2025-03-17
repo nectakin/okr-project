@@ -289,3 +289,34 @@ button:active {
     background-color: pink;
     font-weight: bold;
 }
+
+
+.drag-item {
+    width: 150px;
+    height: 150px;
+    background-color: pink;
+    color: white;
+    text-align: center;
+    line-height: 150px;
+    position: absolute;
+    cursor: grab;
+    border-radius: 10px;
+}
+
+.drop-target {
+    width: 200px;
+    height: 200px;
+    background-color:#f48fb1;
+    color: white;
+    position: absolute;
+    bottom: 100px;
+    left: 1100px;
+    text-align: center;
+    line-height: 200px;
+    border-radius: 10px;
+    border: 2px dashed #8b0e38;
+}
+
+.highlight {
+    background-color: lightcoral;
+}
